@@ -11,14 +11,9 @@ namespace MyTemplate.Web.Entry.Pages.Auth
     public class LoginModel : PageModel
     {
         public string ReturnUrl { get; set; }
-
-        [BindProperty] 
-        [Required]
-        public string Username { get; set; }
-
-        [BindProperty] 
-        [Required]
-        public string Password { get; set; }
+        
+        
+        public UserViewModel UserModel { get; set; }
 
         public void OnGet()
         {
@@ -33,5 +28,17 @@ namespace MyTemplate.Web.Entry.Pages.Auth
             
             return Page();
         }
+    }
+    
+    public class UserViewModel
+    {
+        [Required]
+        [BindProperty]
+        public string Account { get; set; }
+        
+        [BindProperty]
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

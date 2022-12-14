@@ -37,6 +37,21 @@
     {
       "library": "jquery-validation-unobtrusive@3.2.12",
       "destination": "wwwroot/libs/jquery-validate-unobtrusive"
+    },
+    {
+        "library": "iCheck@1.0.3",
+        "destination": "wwwroot/libs/icheck"
+    },
+    {
+        "library": "ionicons@4.5.6",
+        "destination": "wwwroot/libs/ionicons",
+        "files": [
+            "css/ionicons.min.css",
+            "fonts/ionicons.eot",
+            "fonts/ionicons.svg",
+            "fonts/ionicons.ttf",
+            "fonts/ionicons.woff"
+        ]
     }
       
   ]
