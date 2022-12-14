@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <NoWarn>1701;1702;1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MyTemplate.Application\MyTemplate.Application.csproj"/>
+        <ProjectReference Include="..\MyTemplate.Database.Migrations\MyTemplate.Database.Migrations.csproj"/>
+    </ItemGroup>
+
+</Project>
