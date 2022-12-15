@@ -19,7 +19,7 @@ namespace MyTemplate.Web.Entry.Pages.Auth
         {
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public  IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
