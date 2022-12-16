@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MyTemplate.Core\MyTemplate.Core.csproj"/>
+        <ProjectReference Include="..\MyTemplate.Core\MyTemplate.Core.csproj" />
     </ItemGroup>
 
 </Project>

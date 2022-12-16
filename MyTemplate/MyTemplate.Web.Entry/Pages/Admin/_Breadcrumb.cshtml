@@ -1,0 +1,23 @@
+@model string[]
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        @foreach (var url in Model.Reverse())
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                <li>Index</li>
+            }
+            else
+            {
+                <li>@url</li>    
+            }
+            
+        }
+        
+
+    </ol>
+</section>

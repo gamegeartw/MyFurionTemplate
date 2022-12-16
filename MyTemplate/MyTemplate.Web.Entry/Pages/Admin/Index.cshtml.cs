@@ -7,8 +7,19 @@ namespace MyTemplate.Web.Entry.Pages.Admin;
 
 public class Index : PageModel
 {
+    public IndexViewModel IndexViewModel { get; set; }
+    public Index()
+    {
+        IndexViewModel = new IndexViewModel();
+        IndexViewModel.Breadcrumb = Request.Path.Value.Split('/');
+    }
     public void OnGet()
     {
-                
+        IndexViewModel.Breadcrumb = Request.Path.Value.Split('/');
     }
+}
+
+public class IndexViewModel
+{
+    public string[] Breadcrumb { get; set; }
 }

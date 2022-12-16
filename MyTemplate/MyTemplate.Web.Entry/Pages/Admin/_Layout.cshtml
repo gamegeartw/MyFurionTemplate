@@ -17,22 +17,10 @@
 <body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
 <div class="wrapper" style="height: auto; min-height: 100%;">
 
-
-    @await Html.PartialAsync("_Header")
-    @await Html.PartialAsync("_Sidebar")
+    <partial name="_Header" />
+    <partial name="_Sidebar" model="Url.Action()"/>
     <div class="content-wrapper" style="height: 971px">
-        <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    <a href="#"><i class="fa fa-dashboard"></i> Home</a>
-                </li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
+        <partial name="_Breadcrumb" model="Url.Action()!.Split('/')"/>
         <section class="content">
             @RenderBody()
         </section>
