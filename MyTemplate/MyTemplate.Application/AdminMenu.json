@@ -1,0 +1,36 @@
+﻿{
+  "Title": "後台管理",
+  "Description": "後台管理",
+  "Icon": "fa fa-cog",
+  "Url": "/Admin",
+  "SubMenus": [
+    {
+      "Title": "資料表管理",
+      "Description": "各項資料表修改",
+      "Icon": "fa fa-cog",
+      "Url": "/Admin/Table",
+      "SubMenus": []
+    },
+    {
+      "Title": "權限管理",
+      "Description": "權限管理",
+      "Icon": "fa fa-cog",
+      "Url": "/Admin/Permission",
+      "SubMenus": []
+    },
+    {
+      "Title": "角色管理",
+      "Description": "角色管理",
+      "Icon": "fa fa-cog",
+      "Url": "/Admin/Role",
+      "SubMenus": []
+    },
+    {
+      "Title": "使用者管理",
+      "Description": "使用者管理",
+      "Icon": "fa fa-cog",
+      "Url": "/Admin/User",
+      "SubMenus": []
+    }
+  ]
+}

@@ -11,4 +11,11 @@
         <ProjectReference Include="..\MyTemplate.Core\MyTemplate.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="AdminMenu.json" />
+      <Content Include="AdminMenu.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

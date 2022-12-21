@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MyTemplate.Application\MyTemplate.Application.csproj"/>
-        <ProjectReference Include="..\MyTemplate.Database.Migrations\MyTemplate.Database.Migrations.csproj"/>
+        <ProjectReference Include="..\MyTemplate.Application\MyTemplate.Application.csproj" />
+        <ProjectReference Include="..\MyTemplate.Database.Migrations\MyTemplate.Database.Migrations.csproj" />
     </ItemGroup>
 
 </Project>

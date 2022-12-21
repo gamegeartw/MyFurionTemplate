@@ -15,5 +15,7 @@ public class MenuItemModel
 
     public string Path { get; set; }
     
+    public bool Active { get; set; }
+    
     public IEnumerable<MenuItemModel> SubMenuItems { get; set; }
 }
