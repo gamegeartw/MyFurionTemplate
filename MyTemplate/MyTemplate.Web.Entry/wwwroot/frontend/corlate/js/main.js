@@ -47,15 +47,19 @@ jQuery(function ($) {
     form.submit(function (event) {
         event.preventDefault();
         var form_status = $('<div class="form_status"></div>');
-        $.ajax({
-            url: $(this).attr('action'),
-
-            beforeSend: function () {
-                form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn());
-            }
-        }).done(function (data) {
-            form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
+        form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn());
+        $.post('', form.serialize(), function (message) {
+            form_status.html('<p class="text-success">' + message + '</p>').delay(3000).fadeOut();
         });
+        //$.ajax({
+        //    url: $(this).attr('action'),
+
+        //    beforeSend: function () {
+        //        form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn());
+        //    }
+        //}).done(function (data) {
+        //    form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
+        //});
     });
 
     $('.testimonial-slider').owlCarousel({
