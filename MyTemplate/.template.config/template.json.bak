@@ -2,7 +2,7 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "wilber",
   "classifications": [
-    "wilber",
+     "wilber",
     "Furion",
     "Razor",
     "Pages"

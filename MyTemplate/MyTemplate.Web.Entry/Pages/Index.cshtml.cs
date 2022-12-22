@@ -1,12 +1,14 @@
-﻿using MyTemplate.Application;
+﻿using Furion;
+using MyTemplate.Application;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyTemplate.Application.ViewModels;
 
 namespace MyTemplate.Web.Entry.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public readonly ISystemService _systemService;
+        private readonly ISystemService _systemService;
 
         public IndexModel(
             ILogger<IndexModel> logger,
@@ -18,8 +20,8 @@ namespace MyTemplate.Web.Entry.Pages
 
         public void OnGet()
         {
-            _logger.LogInformation("Hello World!");
-            ViewData["Description"] = _systemService.GetDescription();
+            ViewData["Company"] = App.GetConfig<CompanyViewModel>("Company");
         }
     }
+
 }
