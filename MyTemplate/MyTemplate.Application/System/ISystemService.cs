@@ -10,4 +10,7 @@ public interface ISystemService
     /// <param name="activeUrl"></param>
     /// <returns></returns>
     Task<List<MenuItemModel>> GetAdminMenuItemsAsync(string activeUrl);
+
+    Task<UserModel> Login(string account, string password);
+
 }

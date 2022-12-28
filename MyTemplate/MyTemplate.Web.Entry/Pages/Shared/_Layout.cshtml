@@ -1,7 +1,11 @@
 ﻿@using MyTemplate.Application.ViewModels
+@using MyTemplate.Application
+@inject ISystemService SystemService
+
 
 @{
     var company = ViewData["Company"] as CompanyViewModel;
+    
 }
 <!DOCTYPE html>
 <html lang="zh">
@@ -103,18 +107,18 @@
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="~/">Home</a>
+                    <li>
+                        <a asp-page="/Index">Home</a>
                     </li>
                     <li>
-                        <a href="~/AboutUs">About Us</a>
+                        <a asp-page="/AboutUs">About Us</a>
                     </li>
                     <li>
-                        <a href="~/Service">Services</a>
+                        <a asp-page="/Service">Services</a>
                     </li>
-                    <li>
-                        <a href="portfolio.html">Portfolio</a>
-                    </li>
+                    @* <li class='@Url.Action()=="AboutUs"?"active":""'> *@
+                    @*     <a href="portfolio.html">Portfolio</a> *@
+                    @* </li> *@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -133,7 +137,7 @@
                         <a href="blog.html">Blog</a>
                     </li>
                     <li>
-                        <a href="~/ContactUs">Contact</a>
+                        <a asp-page="/ContactUs">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -164,7 +168,7 @@
                             <h3>Company</h3>
                             <ul>
                                 <li>
-                                    <a href="~/AboutUs">About us</a>
+                                    <a asp-page="/AboutUs">About us</a>
                                 </li>
                                 <li>
                                     <a href="#">We are hiring</a>
@@ -182,7 +186,7 @@
                                     <a href="#">Privacy policy</a>
                                 </li>
                                 <li>
-                                    <a href="~/ContactUs">Contact us</a>
+                                    <a asp-page="/ContactUs">Contact us</a>
                                 </li>
                             </ul>
                         </div>
@@ -299,13 +303,13 @@
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="~/AboutUs">About Us</a>
+                        <a asp-page="/AboutUs">About Us</a>
                     </li>
                     <li>
                         <a href="#">Faq</a>
                     </li>
                     <li>
-                        <a href="~/ContactUs">Contact Us</a>
+                        <a asp-page="/ContactUs">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -319,7 +323,21 @@
 <script src="~/frontend/corlate/js/jquery.prettyPhoto.js"></script>
 <script src="~/frontend/corlate/js/owl.carousel.min.js"></script>
 <script src="~/frontend/corlate/js/jquery.isotope.min.js"></script>
-    <script src="~/frontend/corlate/js/main.js" asp-append-version="true"></script>
+<script src="~/frontend/corlate/js/main.js" asp-append-version="true"></script>
+<script>
+ // 判斷目前路徑是不是等於li的超連結路徑,如果是,就增加active class
+    $(document).ready(function () {
+        const url = window.location.pathname;
+        console.log("url:" + url);
+        // Will only work if string in href matches with location
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+
+        // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function () {
+            return this.href === url;
+        }).parent().addClass('active');
+    });
+</script>
 </body>
 
 </html>

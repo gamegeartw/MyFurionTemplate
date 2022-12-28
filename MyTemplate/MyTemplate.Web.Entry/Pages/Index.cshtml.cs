@@ -1,4 +1,6 @@
 ﻿using Furion;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Mvc;
 using MyTemplate.Application;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyTemplate.Application.ViewModels;
@@ -21,6 +23,7 @@ namespace MyTemplate.Web.Entry.Pages
         public void OnGet()
         {
             ViewData["Company"] = App.GetConfig<CompanyViewModel>("Company");
+            
         }
     }
 

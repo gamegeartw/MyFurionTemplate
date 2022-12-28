@@ -6,7 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MyTemplate.Core\MyTemplate.Core.csproj"/>
+        <ProjectReference Include="..\MyTemplate.Core\MyTemplate.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.1" />
     </ItemGroup>
 
 </Project>

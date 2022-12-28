@@ -21,7 +21,6 @@ public class SystemService : ISystemService, ITransient
     /// </summary>
     /// <param name="activeUrl"></param>
     /// <returns></returns>
-    [LoggingMonitor]
     public Task<List<MenuItemModel>> GetAdminMenuItemsAsync(string activeUrl)
     {
         var result = new List<MenuItemModel>();
@@ -30,4 +29,13 @@ public class SystemService : ISystemService, ITransient
         
         return Task.FromResult(result);
     }
+    
+    public Task<UserModel> Login(string account, string password)
+    {
+        var result = new UserModel();
+        // TODO 登入驗證, 並取得使用者資料
+           
+        return Task.FromResult(result);
+    }
+
 }
