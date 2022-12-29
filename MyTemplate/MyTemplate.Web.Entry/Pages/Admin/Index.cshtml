@@ -107,7 +107,9 @@
                 $("body").removeClass("sidebar-collapse");
                 
             }else{
-                $("body").addClass("sidebar-collapse");
+                if (!$('body').hasClass('sidebar-collapse')){
+                    $("body").addClass("sidebar-collapse");    
+                }              
             }
         });
     </script>
