@@ -27,16 +27,14 @@ public class SystemService : ISystemService, ITransient
     /// </summary>
     /// <param name="activeUrl"></param>
     /// <returns></returns>
-    public Task<HtmlString> GetMenuItemsAsync(string activeUrl)
+    public Task<List<MenuItemModel>> GetMenuItemsAsync(string activeUrl)
     {
         var result = new List<MenuItemModel>();
         // TODO 取得側邊選單資料, 並設定 activeUrl
 
-        var menus = _sysMenuRepository.Entities.ToList();
-        HtmlString html = new HtmlString("");
+        var menus = _sysMenuRepository.Entities.ProjectToType<MenuItemModel>().ToList();
         
-        
-        return Task.FromResult(html);
+        return Task.FromResult(menus);
     }
     
     public Task<UserModel> Login(string account, string password)

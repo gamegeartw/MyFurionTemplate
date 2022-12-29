@@ -45,7 +45,6 @@
 
     <ItemGroup>
       <Folder Include="ViewModels\" />
-      <Folder Include="Pages\Auth" />
       <Folder Include="Pages\user" />
       <Folder Include="wwwroot\frontend" />
       <Folder Include="wwwroot\libs\bootstrap" />

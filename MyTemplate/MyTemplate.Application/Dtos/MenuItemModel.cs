@@ -3,6 +3,7 @@
 /// <summary>
 /// 側邊選單Dto
 /// </summary>
+[Serializable]
 public class MenuItemModel
 {
     public string Title { get; set; }
@@ -14,8 +15,6 @@ public class MenuItemModel
     public string Url { get; set; }
 
     public string Path { get; set; }
-    
-    public bool Active { get; set; }
-    
+
     public IEnumerable<MenuItemModel> SubMenuItems { get; set; }
 }

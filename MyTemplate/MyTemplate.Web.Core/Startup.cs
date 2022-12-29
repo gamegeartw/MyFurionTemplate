@@ -14,18 +14,20 @@ public class Startup : AppStartup
         services.AddConsoleFormatter();
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
-        {
-            options.LoginPath = "/Auth/Login"; // 登录地址
-        });
+            {
+                options.LoginPath = "/Auth/Login"; // 登录地址
+            });
 
         services.AddRazorPages(options =>
             {
-                options.Conventions.AuthorizeFolder("/Admin");
-                options.Conventions.AuthorizeFolder("/user");
-                options.Conventions.AuthorizeFolder("/Manager");
+                if (!App.WebHostEnvironment.IsDevelopment())
+                {
+                    options.Conventions.AuthorizeFolder("/Admin");
+                    options.Conventions.AuthorizeFolder("/user");
+                    options.Conventions.AuthorizeFolder("/Manager");
+                }
             })
             .AddInjectBase();
-        
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

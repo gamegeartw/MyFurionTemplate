@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MyTemplate.Web.Entry.Pages.Admin;
+namespace MyTemplate.Web.Entry.Pages.Auth;
 
-public class Signout : PageModel
+public class Logout : PageModel
 {
     public void OnGet()
     {

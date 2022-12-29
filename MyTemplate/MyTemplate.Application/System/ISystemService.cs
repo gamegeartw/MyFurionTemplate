@@ -11,7 +11,7 @@ public interface ISystemService
     /// </summary>
     /// <param name="activeUrl"></param>
     /// <returns></returns>
-    Task<HtmlString> GetMenuItemsAsync(string activeUrl);
+    Task<List<MenuItemModel>> GetMenuItemsAsync(string activeUrl);
 
     Task<UserModel> Login(string account, string password);
 

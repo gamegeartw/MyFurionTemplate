@@ -32,7 +32,7 @@
                 <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i></button>
                 <nav class="page-tabs J_menuTabs">
                     <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="./views/main.html">系统首页</a>
+                        <a href="javascript:;" class="active J_menuTab" data-id="/Admin/main">系统首页</a>
                     </div>
                 </nav>
                 <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></button>
@@ -49,7 +49,7 @@
             </div>
 			<!-- Iframe内容页展示区 -->
             <div class="J_mainContent" id="content-main" >
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="~/Admin/main" frameborder="0" data-id="~/Admin/main" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/Admin/main" frameborder="0" data-id="/Admin/main" seamless></iframe>
             </div>
         </div>
         <!-- 页面底部 -->
@@ -77,9 +77,39 @@
 				shadeClose : true,
 				title : "切换主题",
 				area : ["530px", "386px"],
-				content : ["skin.html", 'no']
+				content : ["../AdminLTE-Iframe/views/skin.html", 'no']
 			})
 		}
+        
+        function get(name) {
+            if (typeof (Storage) !== "undefined") {
+                return localStorage.getItem(name);
+            } else {
+                window.alert('Please use a modern browser to properly view this template!');
+            }
+        }
+        
+        $('.sidebar-toggle').click(function () {
+            if ($('body').hasClass('sidebar-collapse')) {
+                localStorage.setItem("collapse", "1");
+            } else {
+                localStorage.setItem("collapse", "0");
+            }
+        });
+        
+        $(function (){
+            let skin = get("skin");
+            if (skin) {
+                $("body").addClass(skin);
+            }
+            let collapse = get("collapse");
+            if (collapse === "1") {
+                $("body").removeClass("sidebar-collapse");
+                
+            }else{
+                $("body").addClass("sidebar-collapse");
+            }
+        });
     </script>
 </body>
 </html>

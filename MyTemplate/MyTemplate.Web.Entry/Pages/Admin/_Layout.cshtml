@@ -1,59 +1,28 @@
 ﻿<!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
-    <link rel="stylesheet" href="~/libs/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/libs/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="~/libs/admin-lte/css/AdminLTE.min.css"/>
-    <link rel="stylesheet" href="~/libs/admin-lte/css/skins/_all-skins.css"/>
-    <link rel="stylesheet" href="~/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"/>
-    @await RenderSectionAsync("css", required: false)
-    <title>@ViewData["Title"] - DashBoard</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>空白页</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/plugin/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/plugin/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/plugin/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/adminlte/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/adminlte/css/skins/all-skins.min.css">
+  <link rel="stylesheet" href="~/AdminLTE-Iframe/system/css/common.css" />
 </head>
-<body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
-<div class="wrapper" style="height: auto; min-height: 100%;">
-
-    <partial name="_Header" />
-    <partial name="_Sidebar" model="Url.Action()"/>
-    <div class="content-wrapper" style="height: 971px">
-        <partial name="_Breadcrumb" model="Url.Action()!.Split('/')"/>
-        <section class="content">
-            @RenderBody()
-        </section>
-    </div>
-
-    <script src="~/libs/jquery/jquery.min.js"></script>
-    <script src="~/libs/bootstrap/js/bootstrap.js"></script>
-    <script src="~/libs/admin-lte/js/adminlte.js"></script>
-    <script src="~/libs/fastclick/fastclick.min.js"></script>
-    <script src="~/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="~/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="~/libs/jquery-validate/jquery.validate.min.js"></script>
-    <script src="~/libs/jquery-validate-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script>
-        $(document).ready(function () {
-                var url = window.location;
-                // for single sidebar menu
-                $('ul.nav-sidebar.tree a').filter(function () {
-                    return this.href === url;
-                }).addClass('active');
-            
-                // for sidebar menu and treeview
-                $('ul.nav-treeview a').filter(function () {
-                    return this.href === url;
-                }).parentsUntil(".nav-sidebar > .nav-treeview")
-                    .css({'display': 'block'})
-                    .addClass('menu-open').prev('a')
-                    .addClass('active');
-        })
-            
-        
-    </script>
-    @await RenderSectionAsync("Scripts", required: false)
+<body class="hold-transition sidebar-mini gray-bg">
+<div class="wrapper">
+	<section class="content">
+		@RenderBody()
+	</section>
+	<div class="control-sidebar-bg"></div>
 </div>
+<script src="~/AdminLTE-Iframe/plugin/jquery/jquery.min.js"></script>
+<script src="~/AdminLTE-Iframe/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/AdminLTE-Iframe/plugin/fastclick/fastclick.js"></script>
+<script src="~/AdminLTE-Iframe/adminlte/js/adminlte.min.js"></script>
+<script src="~/AdminLTE-Iframe/system/js/common.js"></script>
 </body>
 </html>
