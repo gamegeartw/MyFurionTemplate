@@ -17,11 +17,18 @@ public class SysMenu:Entity<Guid>,IEntityTypeBuilder<SysMenu>
     /// 路徑
     /// </summary>
     public string Url { get; set; }
+    
+    /// <summary>
+    /// 選單層級,使用A/B/C分層
+    /// </summary>
+    public string Path { get; set; }
+    
     /// <summary>
     /// 圖標
     /// </summary>
     public string Icon { get; set; }
 
+   
     /// <summary>
     /// 可用功能
     /// </summary>

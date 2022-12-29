@@ -18,8 +18,14 @@ public class Startup : AppStartup
             options.LoginPath = "/Auth/Login"; // 登录地址
         });
 
-        services.AddRazorPages()
+        services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Admin");
+                options.Conventions.AuthorizeFolder("/user");
+                options.Conventions.AuthorizeFolder("/Manager");
+            })
             .AddInjectBase();
+        
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

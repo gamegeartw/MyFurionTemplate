@@ -1,14 +1,20 @@
 ﻿using Furion.JsonSerialization;
+using Microsoft.AspNetCore.Html;
 using Microsoft.Extensions.Logging;
+using MyTemplate.Core.Models;
 
 namespace MyTemplate.Application;
 
 public class SystemService : ISystemService, ITransient
 {
+    private readonly IRepository<SysMenu> _sysMenuRepository;
     private readonly ILogger<SystemService> _logger;
 
-    public SystemService(ILogger<SystemService> logger)
+    public SystemService(
+        IRepository<SysMenu> sysMenuRepository,
+        ILogger<SystemService> logger)
     {
+        _sysMenuRepository = sysMenuRepository;
         _logger = logger;
     }
     public string GetDescription()
@@ -21,13 +27,16 @@ public class SystemService : ISystemService, ITransient
     /// </summary>
     /// <param name="activeUrl"></param>
     /// <returns></returns>
-    public Task<List<MenuItemModel>> GetAdminMenuItemsAsync(string activeUrl)
+    public Task<HtmlString> GetMenuItemsAsync(string activeUrl)
     {
         var result = new List<MenuItemModel>();
-        // TODO 取得側邊選單資料, 並設定 activeUrl,目前還在考慮是用DB還是用XML管理
+        // TODO 取得側邊選單資料, 並設定 activeUrl
+
+        var menus = _sysMenuRepository.Entities.ToList();
+        HtmlString html = new HtmlString("");
         
         
-        return Task.FromResult(result);
+        return Task.FromResult(html);
     }
     
     public Task<UserModel> Login(string account, string password)

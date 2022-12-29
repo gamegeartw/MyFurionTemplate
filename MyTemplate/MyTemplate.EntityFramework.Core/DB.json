@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "MyTemplate": "Data Source=./AppData/MyTemplate.db"
+  }
+}

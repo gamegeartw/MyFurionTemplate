@@ -1,4 +1,6 @@
-﻿namespace MyTemplate.Application;
+﻿using Microsoft.AspNetCore.Html;
+
+namespace MyTemplate.Application;
 
 public interface ISystemService
 {
@@ -9,7 +11,7 @@ public interface ISystemService
     /// </summary>
     /// <param name="activeUrl"></param>
     /// <returns></returns>
-    Task<List<MenuItemModel>> GetAdminMenuItemsAsync(string activeUrl);
+    Task<HtmlString> GetMenuItemsAsync(string activeUrl);
 
     Task<UserModel> Login(string account, string password);
 
