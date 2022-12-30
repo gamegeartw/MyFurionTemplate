@@ -1,5 +1,33 @@
-@page
-@model MyTemplate.Web.Entry.Pages.Admin._sidebarItemModel
+@model  IEnumerable<MyTemplate.Application.MenuItemModel>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        if (item.SubMenuItems == null)
+        {
+            <li class="treeview">
+                <a class="J_menuItem" asp-page="@item.Url">
+                    <i class="@item.Icon"></i> <span class="nav-label">@item.Title</span>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="treeview">
+                <a href="#">
+                    <i class="@item.Icon"></i>
+                    <span>@item.Title</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @Html.Partial("_sidebarItem", item.SubMenuItems)
+                </ul>
+            </li>
+        }
+    }
+}
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
