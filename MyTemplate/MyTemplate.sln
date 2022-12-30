@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyTemplate.Database.Migrati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyTemplate.Web.Entry", "MyTemplate.Web.Entry\MyTemplate.Web.Entry.csproj", "{7A088B77-BDE8-44E2-9D14-7CB0D3BC8DB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTemplate.xUnitTest", "MyTemplate.xUnitTest\MyTemplate.xUnitTest.csproj", "{D5204B6F-1EDB-4F3F-92AC-0EC4BBE42851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyTemplate.xUnitTest", "MyTemplate.xUnitTest\MyTemplate.xUnitTest.csproj", "{D5204B6F-1EDB-4F3F-92AC-0EC4BBE42851}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

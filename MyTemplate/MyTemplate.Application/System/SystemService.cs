@@ -17,7 +17,7 @@ public class SystemService : ISystemService, ITransient
         _sysMenuRepository = sysMenuRepository;
         _logger = logger;
     }
-    
+
     /// <summary>
     /// 取得側邊選單
     /// </summary>
@@ -30,7 +30,6 @@ public class SystemService : ISystemService, ITransient
         }
 
         return Task.FromResult(_sysMenuRepository.Entities.ProjectToType<MenuItemModel>().ToArray());
-
     }
 
     /// <summary>
@@ -76,17 +75,22 @@ public class SystemService : ISystemService, ITransient
                         }
                     },
                 }
-
             }
         };
     }
 
     public Task<UserModel> Login(string account, string password)
     {
-        var result = new UserModel();
+        var result = new UserModel()
+        {
+            Name = "admin", Roles = new List<RoleModel>()
+            {
+                new() {RoleName = "User"},
+                new() {RoleName = "Admin"}
+            }
+        };
         // TODO 登入驗證, 並取得使用者資料
-           
+
         return Task.FromResult(result);
     }
-
 }

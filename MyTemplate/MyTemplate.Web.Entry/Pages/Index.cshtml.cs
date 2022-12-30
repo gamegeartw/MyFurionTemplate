@@ -1,4 +1,5 @@
 ﻿using Furion;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using MyTemplate.Application;
@@ -7,6 +8,7 @@ using MyTemplate.Application.ViewModels;
 
 namespace MyTemplate.Web.Entry.Pages
 {
+    [AllowAnonymous]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
