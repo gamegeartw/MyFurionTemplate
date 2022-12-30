@@ -1,6 +1,11 @@
 ﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using MyTemplate.Application
+@inject ISystemService SystemService
 @{
     Layout = "";
+    var menus =await SystemService.GetMenuItemsAsync();
+    var menuItems = menus.First();
 }
 <!DOCTYPE html>
 <html>
@@ -24,7 +29,7 @@
 		<partial name="_Header" />
 
         <!-- 左侧菜单栏目 -->
-        <partial name="_Sidebar"/>
+        <partial name="_Sidebar" model="menus"/>
 
         <!-- 右侧页签工具栏及Iframe内容展示区 -->
         <div class="content-wrapper">
@@ -32,7 +37,7 @@
                 <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i></button>
                 <nav class="page-tabs J_menuTabs">
                     <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="/Admin/main">系统首页</a>
+                        <a href="javascript:;" class="active J_menuTab" data-id="@menuItems.Url">@menuItems.Title</a>
                     </div>
                 </nav>
                 <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></button>
